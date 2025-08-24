@@ -1,0 +1,219 @@
+/* ====== Variables de color y estilos base ====== */
+:root {
+  --morado: #5b3ee4;
+  --morado-osc: #4c27cc;
+  --fondo: #f5f6fb;
+  --panel: #ffffff;
+  --borde: #e5e7eb;
+  --texto: #0f172a;
+  --muted: #6b7280;
+  --ok: #10b981;
+  --error: #ef4444;
+  --radio: 12px;
+  --sombra: 0 4px 12px rgba(17, 24, 39, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+/* ====== Botones, inputs ====== */
+.boton {
+  border: none;
+  border-radius: var(--radio);
+  padding: 10px 14px;
+  background: var(--morado);
+  color: #fff;
+  cursor: pointer;
+}
+.boton:hover {
+  background: var(--morado-osc);
+}
+.boton-ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+.entrada {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+.entrada:focus {
+  outline: none;
+  border-color: var(--morado);
+  box-shadow: 0 0 0 2px rgba(91, 62, 228, 0.2);
+}
+
+/* ====== Login ====== */
+.login-pagina {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.login-encabezado {
+  text-align: center;
+  margin-top: 40px;
+}
+.marca {
+  font-size: 22px;
+  font-weight: 900;
+}
+.marca span {
+  color: var(--morado);
+}
+.login-centro {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-tarjeta {
+  width: min(400px, 90%);
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--sombra);
+}
+
+/* ====== Layout Dashboard ====== */
+.panel {
+  display: flex;
+  min-height: 100vh;
+}
+.lateral {
+  width: 240px;
+  background: linear-gradient(180deg, var(--morado-osc), var(--morado));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.lateral-marca {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+.item {
+  padding: 12px;
+  border-radius: 8px;
+  margin: 4px 8px;
+  color: #fff;
+  opacity: 0.9;
+}
+.item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+.item.activo {
+  background: rgba(255, 255, 255, 0.2);
+}
+.lateral-pie {
+  margin-top: auto;
+  padding: 16px;
+}
+.centro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  background: #fff;
+  padding: 16px;
+  border-bottom: 1px solid var(--borde);
+  font-weight: bold;
+}
+.contenido {
+  padding: 20px;
+}
+
+/* ====== Tarjetas ====== */
+.tarjeta {
+  background: var(--panel);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 20px;
+  margin-top: 16px;
+}
+
+/* ====== Tablas ====== */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tabla th, .tabla td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--borde);
+  text-align: left;
+}
+.tabla th {
+  background: #fafafa;
+  color: var(--muted);
+  font-weight: 600;
+}
+.tabla tr:hover td {
+  background: #fafafa;
+}
+
+/* ====== Estados ====== */
+.punto {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.punto.ok { background: var(--ok); }
+.punto.err { background: var(--error); }
+
+/* ====== Despliegue pasos ====== */
+.pasos {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
+}
+.pasos li {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  padding: 6px 14px 6px 28px;
+  position: relative;
+}
+.pasos li::before {
+  content: "";
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--muted);
+  position: absolute;
+  left: 10px; top: 50%;
+  transform: translateY(-50%);
+}
+.pasos .hecho::before { background: var(--ok); }
+.pasos .activo { border-color: var(--morado); }
+.pasos .activo::before { background: var(--morado); }
+.pasos .fallo { border-color: var(--error); }
+.pasos .fallo::before { background: var(--error); }
+
+/* ====== Logs ====== */
+.logs {
+  background: #0b1020;
+  color: #e5e7eb;
+  border-radius: var(--radio);
+  padding: 12px;
+  font-family: monospace;
+  font-size: 13px;
+  overflow-x: auto;
+}

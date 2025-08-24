@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RIWIManager · Network</title>
+  <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body class="panel">
+
+  <!-- Barra lateral -->
+  <aside class="lateral">
+    <div class="lateral-marca">
+      <a class="marca" href="./network.html"><b>RIWI</b><span>Manager</span></a>
+    </div>
+    <nav class="menu">
+      <a class="item activo" href="./network.html"> Networks</a>
+      <a class="item" href="./deployments.html">Deployments</a>
+    </nav
+    <div class="lateral-pie">
+      <a class="boton boton-ghost" href="./login.html">Salir</a>
+    </div>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="centro">
+    <header class="top"><strong>Dashboard</strong></header>
+    <section class="contenido">
+      <div class="cabecera">
+        <h1>Inventory</h1>
+        <div class="herramientas">
+          <input class="entrada" type="search" placeholder="Buscar">
+          <select class="entrada"><option>CPU</option><option>2 vCPU</option><option>4 vCPU</option></select>
+          <select class="entrada"><option>RAM</option><option>8 GB</option><option>16 GB</option></select>
+          <select class="entrada"><option>Status</option><option>Active</option><option>Error</option></select>
+        </div>
+      </div>
+
+      <section class="tarjeta">
+        <div style="overflow:auto;border-radius:18px">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th>Hostname</th><th>MAC Address</th><th>CPU</th><th>RAM</th><th>Status</th><th>Last installation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>host1</td><td>00:1A:28:3C:4P:5E</td><td>2 vCPU</td><td>8 GB</td>
+                <td><span class="punto ok"></span>Active</td><td>Mar 15, 2024</td>
+              </tr>
+              <tr>
+                <td>host2</td><td>00:1A:28:3C:4E:E</td><td>4 vCPU</td><td>8 GB</td>
+                <td><span class="punto err"></span>Error</td><td>Mar 10, 2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+</body>
+</html>

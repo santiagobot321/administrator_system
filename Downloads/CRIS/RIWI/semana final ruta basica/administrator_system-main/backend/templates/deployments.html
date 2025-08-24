@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RIWIManager · Deployments</title>
+  <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body class="panel">
+
+  <!-- Barra lateral -->
+  <aside class="lateral">
+    <div class="lateral-marca">
+      <a class="marca" href="./network.html"><b>RIWI</b><span>Manager</span></a>
+    </div>
+    <nav class="menu">
+      <a class="item" href="./network.html">📶 Networks</a>
+      <a class="item activo" href="./deployments.html">🧰 Deployments</a>
+    </nav>
+    <div class="lateral-pie">
+      <a class="boton boton-ghost" href="./login.html">Salir</a>
+    </div>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="centro">
+    <header class="top"><strong>Dashboard</strong></header>
+    <section class="contenido">
+
+      <div class="cabecera"><h1>Nuevo Despliegue</h1></div>
+
+      <section class="tarjeta">
+        <form class="fila">
+          <label>Plantilla
+            <select class="entrada" required>
+              <option value="">Seleccione…</option>
+              <option>Ubuntu 22.04 LTS</option>
+              <option>Agent Update</option>
+              <option>Driver Pack</option>
+            </select>
+          </label>
+          <label>Alcance
+            <select class="entrada" required>
+              <option value="">Seleccione…</option>
+              <option>5 equipos</option>
+              <option>Red</option>
+              <option>CSV de MACs</option>
+            </select>
+          </label>
+          <label>Cuándo
+            <select class="entrada" required>
+              <option>Ahora</option>
+              <option>Programado</option>
+            </select>
+          </label>
+          <label>Fecha/Hora (si programado)
+            <input class="entrada" type="datetime-local">
+          </label>
+        </form>
+
+        <p class="muted" style="margin-top:8px">Resumen: —</p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+          <button class="boton boton-primario">Confirmar</button>
+          <button class="boton">Cancelar</button>
+          <button class="boton">Reintentar fallidos</button>
+        </div>
+      </section>
+
+      <section class="tarjeta" style="margin-top:16px">
+        <h2>Detalle Despliegue</h2>
+        <ol class="pasos">
+          <li class="hecho">Iniciado</li>
+          <li class="hecho">Instalando Ubuntu 22:04</li>
+          <li class="activo">Configurando red</li>
+          <li>Post-instalación</li>
+          <li class="fallo">Error</li>
+        </ol>
+
+        <div class="dos">
+          <ul style="list-style:none;margin:0;padding:0">
+            <li><time class="muted">10:30</time> Iniciado</li>
+            <li><time class="muted">10:32</time> Instalando Ubuntu 22:04</li>
+            <li><time class="muted">10:40</time> Configurando red</li>
+            <li class="rojo"><time class="muted">10:52</time> Fallo, paquete no-reconectado</li>
+          </ul>
+          <pre class="logs">
+10:30 Matching installer config hashes…
+10:32 Detecting OS as "ubuntu"
+10:40 Attempting to install example-package
+10:52 Error: Optimizing install packages 'example…'
+          </pre>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+</body>
+</html>
