@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RIWIManager · Iniciar sesión</title>
+  <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body class="login-pagina">
+
+  <header class="login-encabezado">
+    <h1 class="marca"><b>RIWI</b><span>Manager</span></h1>
+  </header>
+
+  <main class="login-centro">
+    <section class="tarjeta login-tarjeta">
+      <h2>Iniciar sesión</h2>
+      <form onsubmit="location.href='./network.html';return false;">
+        <label>Correo electrónico
+          <input class="entrada" type="email" required placeholder="tu@correo.com">
+        </label>
+        <label>Contraseña
+          <input class="entrada" type="password" required placeholder="••••••••">
+        </label>
+        <p class="muted"><a href="#" style="color:#5b3ee4">¿Has olvidado tu contraseña?</a></p>
+        <button class="boton boton-primario" style="width:100%">Iniciar sesión</button>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>
+ 
