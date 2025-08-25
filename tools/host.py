@@ -4,7 +4,7 @@ def send_shutdown(ip, port=9876):
     """Connect to the agent and send shutdown command"""
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((ip, port))
-    s.sendall(b"sudo shutdown now")
+    s.sendall(b"shutdown now")
     s.close()
     print(f"Shutdown command sent to {ip}:{port}")
 
