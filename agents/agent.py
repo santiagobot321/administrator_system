@@ -6,7 +6,7 @@ import socket
 def shutdown_pc ():
 
     """shutdown local PC"""
-    os.system("sudo shutdown now")
+    os.system("shutdown now")
 
 
 "Create another function that listen for commands"
@@ -30,7 +30,7 @@ def listen_command(port=9876):
 
         "command is received in bytes and then translated into string"
         command = conn.recv(1024).decode()
-        if command == "sudo shutdown now":
+        if command == "shutdown now":
             print(f"Received shutdown command from {addr}")
             shutdown_pc()
         conn.close()
