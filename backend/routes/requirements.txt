@@ -1,0 +1,17 @@
+# Framework principal
+fastapi==0.115.0
+
+# Servidor ASGI
+uvicorn[standard]==0.30.1
+
+# Conector MySQL
+mysql-connector-python==9.0.0
+
+# Manejo de contraseñas (hash + verificación segura)
+passlib[bcrypt]==1.7.4
+
+# JWT (tokens de autenticación)
+python-jose[cryptography]==3.3.0
+
+# Para cargar variables de entorno (.env)
+python-dotenv==1.0.1
